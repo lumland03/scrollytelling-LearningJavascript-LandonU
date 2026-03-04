@@ -1,3 +1,6 @@
+
+// Theme Drop Down and Keyboard accessibility
+
 const themeToggle = document.querySelector('#theme-toggle');
 const dropdownContent = document.querySelector('.dropdown-content');
 const lightToggle = document.querySelector('#light-theme'); 

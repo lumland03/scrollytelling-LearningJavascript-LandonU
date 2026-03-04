@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="scripts/main.js" defer></script>
+    <script type="module" src="scripts/animations.js" defer></script>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/styles.css">
 
@@ -37,30 +38,33 @@
             <h1> Learning JavaScript Through Building A Computer</h1>
             <p class="subhead"> A story project by Landon Umland</p>
                 <div id="parallax-container">
-                    <div class="parallax-element" id="parallax-element-1"> <img src="https://placehold.co/600x300" alt="placeholder image"></div>
-                    <div class="parallax-element" id="parallax-element-2"> <img src="https://placehold.co/600x300" alt="placeholder image"></div>
-                    <div class="parallax-element" id="parallax-element-3"> <img src="https://placehold.co/600x300" alt="placeholder image"></div>
-                    <div class="parallax-element" id="parallax-element-4"> <img src="https://placehold.co/600x300" alt="placeholder image"></div>
-                    <div class="parallax-element" id="parallax-element-5"> <img src="https://placehold.co/600x300" alt="placeholder image"></div>
-                    <div class="parallax-element" id="parallax-element-6"> <img src="https://placehold.co/600x300" alt="placeholder image"></div>
+                    <div class="parallax-element fg-layer" id="parallax-element-1"> <img src="https://placehold.co/600x300" alt="placeholder image"></div>
+                    <div class="parallax-element fg-layer" id="parallax-element-2"> <img src="https://placehold.co/600x300" alt="placeholder image"></div>
+                    <div class="parallax-element mid-layer" id="parallax-element-3"> <img src="https://placehold.co/600x300" alt="placeholder image"></div>
+                    <div class="parallax-element mid-layer" id="parallax-element-4"> <img src="https://placehold.co/600x300" alt="placeholder image"></div>
+                    <div class="parallax-element bg-layer" id="parallax-element-5"> <img src="https://placehold.co/600x300" alt="placeholder image"></div>
+                    <div class="parallax-element bg-layer" id="parallax-element-6"> <img src="https://placehold.co/600x300" alt="placeholder image"></div>
                 </div>
         </section>
 
         <section class="story-section" id="section-1">
             <div id="svg-container-1">
-                <img id="motherboard" src="https://placehold.co/750x750" alt="placeholder image">
-                <p>Opening:
+                <img id="built-case" src="https://placehold.co/750x750" alt="placeholder image">
+            
+                <p class="opening" >Opening:
                 I have come to learn that JavaScript is a fair amount similar to building a computer. I had seen what JS had looked like, but everything about it confused me and wasn’t digestible. Also like building a computer It seemed very menacing at first, but by digesting it in small chunks, it call came together for a solid understanding. 
                 </p>
             </div>
         </section>
 
         <section class="story-section" id="section-2">
-            <div id="temp-section-2">
+            <div id="svg-container-2">
+                <img id="motherboard" src="https://placehold.co/750x750" alt="placeholder image">
+                <img id="case-cover" src="https://placehold.co/750x750/000000/FFFFFF" alt="placeholder image">
                 <p>One of the first things I learned in JS was console.log(). Everyone has their first console.log(“hello world”); Talking to the web page through the console to diagnose issues is a very useful tool that is similar to the motherboards debug light on a pc. While its not the best example, they are similar. A web page will tell you a lot with because it can communicate through text errors. A motherboard (and not all of them) has a debug light that can tell you what went wrong when trying to post. This isn’t a great indicator, because first you have to understand what either the blink pattern or color means. But once you understand that, its a great way to know that your ram isn’t seated fully.
-
                 </p>
             </div>
+                
         </section>
         <section class="story-section" id="section-3">
             <div id="svg-container-2">
