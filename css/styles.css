@@ -62,8 +62,9 @@ body{
   gap: var(--SpacingM);
   overflow-x: hidden;
   background-color: var(--Brand__SurfaceColor); 
-  width: 100vw;
+  width: 100%;
   justify-content: flex-end;
+
 }
 
 header{
@@ -132,7 +133,6 @@ a{
   box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
 }
 
-
 /* headings */
 
 
@@ -164,7 +164,7 @@ h1{
 
 #intro-section{
   display: relative;
-  width: 100vw;
+  width: 100%;
   overflow: hidden;
   height: 120vh;
 }
@@ -212,21 +212,21 @@ h1{
 
 #parallax-element-6{
   top: 30%;
-  left: 73%;
+  left: 75%;
   width: 100%;
   z-index: 1;
 }
 
 #parallax-element-4{
   top: 40%;
-  left: 63%;
+  left: 65%;
   width: 100%;
   z-index: 2;
 }
 
 #parallax-element-2{
   top: 50%;
-  left: 53%;
+  left: 55%;
   width: 100%;
   z-index: 3;
 }
@@ -237,8 +237,7 @@ h1{
 
 
 #section-1{
-  width: 100;
-  overflow-x: hidden;
+  width: 100%;
   height: 100vh;
   margin: var(--SpacingL);
 }
@@ -251,6 +250,7 @@ h1{
   gap: var(--Spacing2XL);
   width: 100%;
   justify-content: center;
+  
 
 }
 
@@ -262,15 +262,15 @@ h1{
   margin: var(--Spacing2XL);
   width: 40%;
   
-  
 }
+
 
 
 /* Section 2 */
 
 
 #section-2{
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   margin: var(--SpacingL);
 }
@@ -283,16 +283,10 @@ h1{
   gap: var(--Spacing2XL);
   width: 100%;
   justify-content: center;
+  
 
 }
 
-
-#case-cover{
-  position: absolute;
-  top: 0;
-  left: 10%;
-  z-index: 2;
-}
 
 #section-2 p{
   color: var(--Brand__TextColor);
@@ -301,6 +295,20 @@ h1{
   font-family: var(--FontFamilyBody);
   margin: var(--Spacing2XL);
   width: 40%;
-  
-  
+}
+
+#case-cover{
+  position: absolute;
+  top: 0;
+  left: 10%;
+  z-index: 2;
+}
+
+
+#light-indicator{
+  position: absolute;
+  top: 10%;
+  left: 40%;
+  z-index: 2;
+
 }

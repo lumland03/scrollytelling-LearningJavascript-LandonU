@@ -38,6 +38,8 @@ gsap.to('.fg-layer', {
 }
 });
 
+
+ 
 gsap.to('#case-cover', {
     y: -1000,
     ease: "none",
@@ -46,7 +48,21 @@ gsap.to('#case-cover', {
       start: "top 20%",
       end: "bottom bottom",
       pin: true,
-      scrub: .5,
+      scrub: true,
       markers: true,
   }
 });
+
+gsap.to('.section-2-p', {
+    y: -500, 
+    ease: "none",
+    scrollTrigger: {
+      trigger:"section-2", 
+      start: "top 10%",
+      end: "bottom bottom",
+      pin: true,
+      scrub: true,
+      markers: true,
+  }
+});
+
