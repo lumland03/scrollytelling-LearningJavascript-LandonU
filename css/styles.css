@@ -141,7 +141,7 @@ h1{
   position: relative;
   text-align: center;
   color: var(--Brand__TextColor);
-  font-size: var(--Sizes__2XL);
+  font-size: var(--Sizes__3XL);
   margin-bottom: var(--SpacingL);
   font-family: var(--FontFamilyHeading);
   top: 25%;
@@ -151,7 +151,7 @@ h1{
 .subhead{
   text-align: center;
   color: var(--Brand__TextColor);
-  font-size: var(--Sizes__L);
+  font-size: var(--Sizes__XL);
   margin-bottom: var(--SpacingL);
   font-family: var(--FontFamilyHeading);
   position: relative;
@@ -256,7 +256,7 @@ h1{
 
 #section-1 p{
   color: var(--Brand__TextColor);
-  font-size: var(--Sizes__L);
+  font-size: var(--Sizes__XL);
   margin-bottom: var(--SpacingL);
   font-family: var(--FontFamilyBody);
   margin: var(--Spacing2XL);
@@ -269,7 +269,7 @@ h1{
 /* Section 2 */
 
 
-#section-2{
+/* #section-2{
   width: 100%;
   height: 100vh;
   margin: var(--SpacingL);
@@ -295,20 +295,111 @@ h1{
   font-family: var(--FontFamilyBody);
   margin: var(--Spacing2XL);
   width: 40%;
+} */
+
+#section-2 {
+  width: 100%;
+  min-height: 100vh; /* Changed from height: 100vh */
+  position: relative;
+  display: flex;
+  justify-content: center;
 }
+
+#svg-container-2 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start; /* Keeps items at the top */
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+
+
+/* Adjust the Motherboard Wrapper scale */
+#motherboard-wrapper {
+  position: relative;
+  width: 90%;          /* Scale the SVG container to fit the left column */
+  max-width: 600px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* THE LEFT SIDE (The Motherboard) */
+.sticky-visual {
+  flex: 1;             /* Takes up 50% of the space */
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  left: 0;             /* Anchors it to the left */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;          /* Ensures it only takes up half the width */
+}
+
+/* Ensure the motherboard doesn't move */
+#motherboard {
+  top: 0;  /* Make the SVG responsive to the container */
+  left: 0;
+  height: auto;
+}
+
 
 #case-cover{
   position: absolute;
-  top: 0;
-  left: 12%;
-  z-index: 2;
+  top: 20%;
+  left: 20%;
+  pointer-events: none; /* Allows clicks to pass through to elements below if needed */
 }
-
 
 #light-indicator{
   position: absolute;
-  top: 10%;
-  left: 40%;
-  z-index: 2;
+  top: 26%;
+  left: 73%;
+  pointer-events: none; /* Allows clicks to pass through to elements below if needed */
+}
 
+#scrolly-container {
+  display: flex;
+  flex-direction: row; /* Align columns side-by-side */
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.section-2-p {
+  flex: 1;
+  padding: 50vh 20px; /* Gives space for the text to actually "scroll" past the image */
+  font-size: var(--Sizes__L);
+  z-index: 5;
+}
+
+
+/* THE RIGHT SIDE (The Text) */
+.scrolling-content {
+  flex: 1;             /* Takes up the other 50% */
+  padding: 0 10%;      /* Adds breathing room for the text */
+  display: flex;
+  flex-direction: column;
+}
+
+.step {
+  height: 100vh; /* Each paragraph takes up one full screen of scrolling */
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-left: auto;
+  width: 50%;
+  opacity: 0.3; /* Start dim */
+  transition: opacity 0.5s;
+  color: var(--Brand__TextColor);
+  font-family: var(--FontFamilyBody);
+  font-size: var(--Sizes__XL);
+}
+
+/* We will use GSAP to highlight the active step later */
+.step.is-active {
+  opacity: 1;
 }
