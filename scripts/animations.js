@@ -2,6 +2,20 @@ import gsap from "https://esm.sh/gsap";
 import ScrollTrigger from "https://esm.sh/gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
+
+
+
+const prefersReducedMotion = window.matchMedia(
+"(prefers-reduced-motion: reduce)"
+).matches;
+
+if (!prefersReducedMotion) {
+
+
+
+
+
+
 // Layer 1: Background — moves the LEAST (slow = far away)
 gsap.to(".bg-layer", {
   y: 250,
@@ -39,46 +53,7 @@ gsap.to('.fg-layer', {
 });
 
 
-// let tl = gsap.timeline
-// gsap.to('#case-cover', {
-//     y: -1200,
-//     ease: "none",
-//     scrollTrigger: {
-//       trigger:"#section-2", 
-//       start: "top 20%",
-//       end: "bottom bottom",
-//       pin: true,
-//       pinSpacing: true,
-//       scrub: true,
-//       markers: true,
-//   }
-// });
-
-// gsap.to('.section-2-p', {
-//     y: -1000,
-//     ease: "none",
-//     scrollTrigger: {
-//       trigger:"#section-2", 
-//       start: "top 5%",  
-//       end: "bottom bottom",
-//       pin: true,
-//       pinSpacing: true,
-//       scrub: true,
-//       markers: true,
-//     }
-// });
-
 // Create a timeline for Section 2
-let tl2 = gsap.timeline({
-  scrollTrigger: {
-    trigger: "#section-2",
-    start: "top top",      // Pin when the top of the section hits the top of viewport
-    end: "+=2000",         // Stay pinned for 2000px of scrolling
-    pin: true,             // This keeps the whole section still
-    scrub: true,           // Links animation to scroll distance
-    markers: true,         // Toggle off when done
-  }
-});
 
 
 // 1. Reveal Motherboard (Section 2 Logic)
@@ -107,4 +82,101 @@ steps.forEach((step, i) => {
   });
 });
 
-// 3. Example: Animate the RAM when you get to Section 4
+
+// 3. Slide the RAM into the motherboard
+gsap.from("#ram", {
+  x: 100,          // Starts 200px to the right (adjust this to fit your SVG)
+  y: 0,         // Starts slightly higher to look like it's dropping in
+  opacity: 0,      // Starts invisible
+  scrollTrigger: {
+    trigger: "#step-4",
+    start: "top center",
+    end: "center center", // Finishes sliding in when step 3 is fully centered
+    scrub: 1,             // 1 second lag for a smooth slide
+    markers: true
+  }
+});
+
+gsap.to("#ram", {
+  rotation: 10,
+  transformOrigin: "bottom left",            
+  scrollTrigger: {
+    trigger: "#step-5",
+    start: "top center",
+    end: "center center", 
+    scrub: 1,             
+    markers: true
+  }
+});
+
+gsap.fromTo("#ram", 
+  { 
+    rotation: 10 
+  }, 
+  {
+    rotation: 0, 
+    immediateRender: false, 
+    scrollTrigger: {
+      trigger: "#step-6",
+      start: "top center",
+      end: "center center", 
+      scrub: 1,            
+      markers: true
+    }
+  }
+);
+
+gsap.to('.sticky-visual',{
+    yPercent: -100,
+    scrollTrigger: {
+    trigger: "#step-7",
+    start: "top bottom",
+    end: "bottom bottom",
+    scrub: true,
+    markers: true,
+  }
+});
+
+gsap.fromTo('.psu-wrapper', 
+  { 
+    top: "120vh", // The STARTING position (forced by GSAP)
+    opacity: 0
+  }, 
+  {
+    top: "40%",   // The ENDING position
+    opacity: 1,
+    scrollTrigger: {
+      trigger: "#step-7",
+      start: "top center",
+      end: "top top", 
+      scrub: true,
+      markers: true,
+    }
+  }
+);
+
+gsap.to('.psu-wrapper',{
+    yPercent: -200,
+    scrollTrigger: {
+    trigger: "#step-8",
+    start: "top bottom",
+    end: "bottom bottom",
+    scrub: true,
+    markers: true,
+  }
+});
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+

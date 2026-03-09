@@ -158,6 +158,10 @@ h1{
   top: 25%;
 }
 
+h2{
+  font-family: var(--FontFamilyHeading);
+}
+
 
 /* sections */
 
@@ -317,6 +321,12 @@ h1{
 
 
 
+
+
+
+
+
+
 /* Adjust the Motherboard Wrapper scale */
 #motherboard-wrapper {
   position: relative;
@@ -361,9 +371,16 @@ h1{
   pointer-events: none; /* Allows clicks to pass through to elements below if needed */
 }
 
+#ram{
+  position: absolute;
+  top: 26%;
+  left: 65%;
+}
+
+
 #scrolly-container {
   display: flex;
-  flex-direction: row; /* Align columns side-by-side */
+  flex-direction: column; /* Align columns side-by-side */
   justify-content: flex-start;
   align-items: flex-start;
   width: 100%;
@@ -386,20 +403,27 @@ h1{
 }
 
 .step {
-  height: 100vh; /* Each paragraph takes up one full screen of scrolling */
+  height: 100vh; 
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  flex-direction: column; /* This forces the h2 and p to stack vertically! */
+  justify-content: center; /* Centers them vertically within the 100vh space */
+  align-items: flex-start; /* Aligns the text to the left */
   margin-left: auto;
   width: 50%;
-  opacity: 0.3; /* Start dim */
+  opacity: 0.3; 
   transition: opacity 0.5s;
   color: var(--Brand__TextColor);
   font-family: var(--FontFamilyBody);
   font-size: var(--Sizes__XL);
 }
 
-/* We will use GSAP to highlight the active step later */
 .step.is-active {
   opacity: 1;
+}
+
+.psu-wrapper{
+  position: fixed;
+  left: 15%;
+  opacity: 1;
+  z-index: 1;
 }
