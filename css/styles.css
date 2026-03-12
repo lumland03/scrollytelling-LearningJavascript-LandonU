@@ -353,22 +353,22 @@ h2{
 #motherboard {
   top: 0;  /* Make the SVG responsive to the container */
   left: 0;
-  height: auto;
+  position:relative;
 }
 
 
 #case-cover{
   position: absolute;
-  top: 20%;
-  left: 20%;
-  pointer-events: none; /* Allows clicks to pass through to elements below if needed */
+  top: 14%;
+  left: 17%;
+  
 }
 
 #light-indicator{
   position: absolute;
-  top: 26%;
-  left: 73%;
-  pointer-events: none; /* Allows clicks to pass through to elements below if needed */
+  top: 0;
+  left: 0;
+  
 }
 
 #ram{
@@ -426,4 +426,37 @@ h2{
   left: 15%;
   opacity: 1;
   z-index: 1;
+}
+.rest-wrapper{
+  position: fixed;
+  left: 5%;
+  opacity: 1;
+  z-index: 1;
+}
+
+#step-9{
+  width:100%;
+  margin: auto;
+  position: relative;
+  z-index: 10;
+}
+
+#nine-content{
+  width:60%;
+  margin: auto;
+}
+
+#monitor{
+position: absolute;
+z-index: -1;
+top:15%;
+left: 15%;
+}
+
+#cable{
+  position: absolute;
+  top: 70%;
+  left:15%;
+  z-index: -10;
+
 }

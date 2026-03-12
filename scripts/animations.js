@@ -166,7 +166,34 @@ gsap.to('.psu-wrapper',{
   }
 });
 
+gsap.fromTo('.rest-wrapper', 
+  { 
+    top: "120vh", // The STARTING position (forced by GSAP)
+    opacity: 0
+  }, 
+  {
+    top: "40%",   // The ENDING position
+    opacity: 1,
+    scrollTrigger: {
+      trigger: "#step-8",
+      start: "top center",
+      end: "top top", 
+      scrub: true,
+      markers: true,
+    }
+  }
+);
 
+gsap.to('.rest-wrapper',{
+    yPercent: -200,
+    scrollTrigger: {
+    trigger: "#step-9",
+    start: "top bottom",
+    end: "top top",
+    scrub: true,
+    markers: true,
+  }
+});
 
 
 
