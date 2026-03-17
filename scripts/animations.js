@@ -1,7 +1,8 @@
 import gsap from "https://esm.sh/gsap";
 import ScrollTrigger from "https://esm.sh/gsap/ScrollTrigger";
+import DrawSVGPlugin from "https://esm.sh/gsap/DrawSVGPlugin";
 gsap.registerPlugin(ScrollTrigger);
-
+gsap.registerPlugin(DrawSVGPlugin); 
 
 
 
@@ -82,6 +83,7 @@ steps.forEach((step, i) => {
   });
 });
 
+gsap.from('.draw-me', { duration: 1.5, stagger: 0.1, drawSVG: 0, ease: "inOut", });
 
 // 3. Slide the RAM into the motherboard
 gsap.from("#ram", {

@@ -359,22 +359,30 @@ h2{
 
 #case-cover{
   position: absolute;
-  top: 14%;
+  top: 20%;
   left: 17%;
   
 }
 
 #light-indicator{
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 33%;
+  left: 57%;
   
 }
 
 #ram{
   position: absolute;
-  top: 26%;
-  left: 65%;
+  top: 27%;
+  left: 64%;
+}
+
+
+.circle{
+  position: absolute;
+  top: 230px;
+  left: 652px;
+  stroke: gold;
 }
 
 
@@ -442,7 +450,7 @@ h2{
 }
 
 #nine-content{
-  width:60%;
+  width:50%;
   margin: auto;
 }
 
@@ -450,7 +458,7 @@ h2{
 position: absolute;
 z-index: -1;
 top:15%;
-left: 15%;
+left: 30vh;
 }
 
 #cable{
