@@ -475,6 +475,8 @@ top:31%;
 left:70.5%;
 }
 
-
+.circle svg {
+  overflow: visible !important; 
+}
 
 

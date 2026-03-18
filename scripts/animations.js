@@ -151,10 +151,32 @@ gsap.from('#light-indicator',{
 }
 });
 
+gsap.to('#light-indicator',{
+  fill:"green",
+  scrollTrigger: {
+    trigger: "#step-6",
+      start: "top center",
+      end: "center center", 
+      scrub: 1,   
+}
+});
 
 
+gsap.set(".circle", { drawSVG: "0%" });
 
-
+gsap.to('.circle', {
+  drawSVG: "100%",
+  yPercent: 165,
+  xPercent: -135,
+  immediateRender: false, // CRITICAL: prevents it from jumping to 100% early
+  scrollTrigger: {
+    trigger: "#step-6",
+    start: "top center",
+    end: "center center", 
+    scrub: 1,
+    markers: true // Turn this on! Do you see the "start" and "end" labels?
+  }
+});
 gsap.to('.sticky-visual',{
     yPercent: -100,
     scrollTrigger: {
