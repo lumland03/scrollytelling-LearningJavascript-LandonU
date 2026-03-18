@@ -54,14 +54,13 @@ gsap.to('.fg-layer', {
 });
 
 
-// Create a timeline for Section 2
 
 
-// 1. Reveal Motherboard (Section 2 Logic)
+
 gsap.to("#case-cover", {
   yPercent: -200,
   scrollTrigger: {
-    trigger: "#step-2", // Starts when text for section 2 hits
+    trigger: "#step-2", 
     start: "top center",
     end: "bottom center",
     scrub: true,
@@ -69,7 +68,7 @@ gsap.to("#case-cover", {
   }
 });
 
-// 2. Highlight text as you scroll past it
+
 const steps = gsap.utils.toArray(".step");
 steps.forEach((step, i) => {
   ScrollTrigger.create({
@@ -83,18 +82,31 @@ steps.forEach((step, i) => {
   });
 });
 
-gsap.from('.draw-me', { duration: 1.5, stagger: 0.1, drawSVG: 0, ease: "inOut", });
 
-// 3. Slide the RAM into the motherboard
+const drawTl = gsap.timeline({
+  scrollTrigger: {
+    trigger: "#step-3",
+    start: "top center", 
+    end: "bottom center ",   
+    scrub: 1,           
+  }
+});
+
+drawTl
+  .fromTo(".draw-me", { drawSVG: "0%" }, { drawSVG: "100%", ease: "none" })
+  .to({}, { duration: 1.5 }) 
+  .to(".draw-me", { drawSVG: "0%", ease: "none" });
+
+
 gsap.from("#ram", {
-  x: 100,          // Starts 200px to the right (adjust this to fit your SVG)
-  y: 0,         // Starts slightly higher to look like it's dropping in
-  opacity: 0,      // Starts invisible
+  x: 100,         
+  y: 0,         
+  opacity: 0,      
   scrollTrigger: {
     trigger: "#step-4",
     start: "top center",
-    end: "center center", // Finishes sliding in when step 3 is fully centered
-    scrub: 1,             // 1 second lag for a smooth slide
+    end: "center center",
+    scrub: 1,             
     markers: true
   }
 });
