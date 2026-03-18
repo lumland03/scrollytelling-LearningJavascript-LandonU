@@ -140,6 +140,21 @@ gsap.fromTo("#ram",
   }
 );
 
+
+gsap.from('#light-indicator',{
+  fill:"green",
+  scrollTrigger: {
+    trigger: "#step-5",
+      start: "top center",
+      end: "center center", 
+      scrub: 1,   
+}
+});
+
+
+
+
+
 gsap.to('.sticky-visual',{
     yPercent: -100,
     scrollTrigger: {
