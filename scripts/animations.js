@@ -17,7 +17,7 @@ if (!prefersReducedMotion) {
 
 
 
-// Layer 1: Background — moves the LEAST (slow = far away)
+
 gsap.to(".bg-layer", {
   y: 250,
   ease: "none",
@@ -26,7 +26,7 @@ gsap.to(".bg-layer", {
     start: "top top",
     end: "bottom top",
     scrub: true,
-    markers: true,
+    
    
   }
 });
@@ -38,7 +38,7 @@ gsap.to('.mid-layer', {
     start: "top top",
     end: "bottom top",
     scrub: true,
-    markers: true,
+    
 }
 });
 gsap.to('.fg-layer', {
@@ -49,7 +49,7 @@ gsap.to('.fg-layer', {
     start: "top top",
     end: "bottom top",
     scrub: true,
-    markers: true,
+   
 }
 });
 
@@ -64,7 +64,7 @@ gsap.to("#case-cover", {
     start: "top center",
     end: "bottom center",
     scrub: true,
-    markers: true,
+   
   }
 });
 
@@ -107,7 +107,7 @@ gsap.from("#ram", {
     start: "top center",
     end: "center center",
     scrub: 1,             
-    markers: true
+    
   }
 });
 
@@ -119,7 +119,7 @@ gsap.to("#ram", {
     start: "top center",
     end: "center center", 
     scrub: 1,             
-    markers: true
+    
   }
 });
 
@@ -135,7 +135,7 @@ gsap.fromTo("#ram",
       start: "top center",
       end: "center center", 
       scrub: 1,            
-      markers: true
+     
     }
   }
 );
@@ -168,13 +168,13 @@ gsap.to('.circle', {
   drawSVG: "100%",
   yPercent: 165,
   xPercent: -135,
-  immediateRender: false, // CRITICAL: prevents it from jumping to 100% early
+  immediateRender: false, 
   scrollTrigger: {
     trigger: "#step-6",
     start: "top center",
     end: "center center", 
     scrub: 1,
-    markers: true // Turn this on! Do you see the "start" and "end" labels?
+    
   }
 });
 gsap.to('.sticky-visual',{
@@ -184,7 +184,7 @@ gsap.to('.sticky-visual',{
     start: "top bottom",
     end: "bottom bottom",
     scrub: true,
-    markers: true,
+    
   }
 });
 
@@ -201,7 +201,7 @@ gsap.fromTo('.psu-wrapper',
       start: "top center",
       end: "top top", 
       scrub: true,
-      markers: true,
+      
     }
   }
 );
@@ -213,7 +213,7 @@ gsap.to('.psu-wrapper',{
     start: "top bottom",
     end: "bottom bottom",
     scrub: true,
-    markers: true,
+    
   }
 });
 
@@ -230,7 +230,7 @@ gsap.fromTo('.rest-wrapper',
       start: "top center",
       end: "top top", 
       scrub: true,
-      markers: true,
+     
     }
   }
 );
@@ -242,7 +242,7 @@ gsap.to('.rest-wrapper',{
     start: "top bottom",
     end: "top top",
     scrub: true,
-    markers: true,
+    
   }
 });
 
